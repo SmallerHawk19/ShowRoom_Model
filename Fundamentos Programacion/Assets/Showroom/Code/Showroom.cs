@@ -10,6 +10,18 @@ public class Showroom : MonoBehaviour
     private Vector3 InitialPosition;
     private Vector3 InitialRotation;
 
+    public GameObject Subject1;
+    public GameObject Subject2;
+    public GameObject Subject3;
+    public GameObject Subject4;
+    public GameObject Subject5;
+    public GameObject Subject6;
+    public GameObject Subject7;
+    public GameObject Subject8;
+    public GameObject Subject9;
+
+
+
     void Start()
     {
         InitialScale = Model.transform.localScale;
@@ -79,4 +91,19 @@ public class Showroom : MonoBehaviour
         obj.SetActive(false);
     }
 
+    public void ChangeMaterial(Material mat)
+    {
+        Subject1.GetComponent<MeshRenderer>().material = mat;
+        Subject2.GetComponent<MeshRenderer>().material = mat;
+        Subject3.GetComponent<MeshRenderer>().material = mat;
+        Subject4.GetComponent<MeshRenderer>().material = mat;
+        Subject5.GetComponent<MeshRenderer>().material = mat;
+        Subject6.GetComponent<MeshRenderer>().material = mat;
+        Subject7.GetComponent<MeshRenderer>().material = mat;
+        Subject8.GetComponent<MeshRenderer>().material = mat;
+        Subject9.GetComponent<MeshRenderer>().material = mat;
+
+    }
+
+    
 }
