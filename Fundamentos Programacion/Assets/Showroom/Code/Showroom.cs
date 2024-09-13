@@ -4,15 +4,68 @@ using UnityEngine;
 
 public class Showroom : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Model;
+
+    private Vector3 InitialScale;
+    private Vector3 InitialPosition;
+    private Vector3 InitialRotation;
+
     void Start()
     {
-        
+        InitialScale = Model.transform.localScale;
+        InitialPosition = Model.transform.position;
+        InitialRotation = Model.transform.rotation.eulerAngles;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Reset()
     {
-        
+        Model.transform.localScale = InitialScale;
+        Model.transform.position = InitialPosition;
+        Model.transform.rotation = Quaternion.Euler(InitialRotation);
+    }
+
+    public void RotateX(float angle)
+    {
+        Model.transform.Rotate(angle, 0, 0);
+    }
+
+    public void RotateY(float angle)
+    {
+        Model.transform.Rotate(0, angle, 0);
+    }
+
+    public void RotateZ(float angle)
+    {
+        Model.transform.Rotate(0, 0, angle);
+    }
+
+    public void MoveX(float distance)
+    {
+        Model.transform.Translate(distance, 0, 0);
+    }
+
+    public void MoveY(float distance)
+    {
+        Model.transform.Translate(0, distance, 0);
+    }
+
+    public void MoveZ(float distance)
+    {
+        Model.transform.Translate(0, 0, distance);
+    }
+
+    public void ScaleX(float scale)
+    {
+        Model.transform.localScale = new Vector3(Model.transform.localScale.x + scale, Model.transform.localScale.y, Model.transform.localScale.z);
+    }
+
+    public void ScaleY(float scale)
+    {
+        Model.transform.localScale = new Vector3(Model.transform.localScale.x, Model.transform.localScale.y + scale, Model.transform.localScale.z);
+    }
+
+    public void ScaleZ(float scale)
+    {
+        Model.transform.localScale = new Vector3(Model.transform.localScale.x, Model.transform.localScale.y, Model.transform.localScale.z + scale);
     }
 }
