@@ -10,23 +10,17 @@ public class Showroom : MonoBehaviour
     private Vector3 InitialPosition;
     private Vector3 InitialRotation;
 
-    public GameObject Subject1;
-    public GameObject Subject2;
-    public GameObject Subject3;
-    public GameObject Subject4;
-    public GameObject Subject5;
-    public GameObject Subject6;
-    public GameObject Subject7;
-    public GameObject Subject8;
-    public GameObject Subject9;
+    public List<GameObject> ModelPartsList;
+    public List<Material> NewMaterials;
 
-
+    private List<Material> InitialModelMaterials;
 
     void Start()
     {
         InitialScale = Model.transform.localScale;
         InitialPosition = Model.transform.position;
         InitialRotation = Model.transform.rotation.eulerAngles;
+        SaveInitialMaterial();
     }
 
     public void Reset()
@@ -91,19 +85,27 @@ public class Showroom : MonoBehaviour
         obj.SetActive(false);
     }
 
-    public void ChangeMaterial(Material mat)
+    public void ChangeMaterial()
     {
-        Subject1.GetComponent<MeshRenderer>().material = mat;
-        Subject2.GetComponent<MeshRenderer>().material = mat;
-        Subject3.GetComponent<MeshRenderer>().material = mat;
-        Subject4.GetComponent<MeshRenderer>().material = mat;
-        Subject5.GetComponent<MeshRenderer>().material = mat;
-        Subject6.GetComponent<MeshRenderer>().material = mat;
-        Subject7.GetComponent<MeshRenderer>().material = mat;
-        Subject8.GetComponent<MeshRenderer>().material = mat;
-        Subject9.GetComponent<MeshRenderer>().material = mat;
-
+        for(int i = 0; i < ModelPartsList.Count; i++)
+        {
+            ModelPartsList[i].GetComponent<MeshRenderer>().material = NewMaterials[i];
+        }
     }
 
-    
+    public void ResetMaterial()
+    {
+        for(int i = 0; i < ModelPartsList.Count; i++)
+        {
+            ModelPartsList[i].GetComponent<MeshRenderer>().material = InitialModelMaterials[i];
+        }
+    }
+
+    private void SaveInitialMaterial()
+    {
+        foreach(GameObject ModelPart in ModelPartsList)
+        {
+            InitialModelMaterials.Add(ModelPart.GetComponent<MeshRenderer>().material);
+        }
+    }
 }
