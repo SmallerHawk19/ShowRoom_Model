@@ -13,7 +13,7 @@ public class Showroom : MonoBehaviour
     public List<GameObject> ModelPartsList;
     public List<Material> NewMaterials;
 
-    private List<Material> InitialModelMaterials;
+    private List<Material> InitialModelMaterials = new List<Material>();
 
     void Start()
     {
