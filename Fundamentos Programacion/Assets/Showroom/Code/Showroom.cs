@@ -68,4 +68,15 @@ public class Showroom : MonoBehaviour
     {
         Model.transform.localScale = new Vector3(Model.transform.localScale.x, Model.transform.localScale.y, Model.transform.localScale.z + scale);
     }
+
+    public void ActivateObj(GameObject obj)
+    {
+        obj.SetActive(true);
+    }
+
+    public void DeActivateObj(GameObject obj)
+    {
+        obj.SetActive(false);
+    }
+
 }
