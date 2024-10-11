@@ -9,6 +9,8 @@ TagManager:
   - PointMaker
   - Obstacle
   - Spawn
+  - EmptyObstacle
+  - GameBorder
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Arms
   - Boat
   - Floor
-  - 
+  - Obstacle
   - 
   - 
   - 

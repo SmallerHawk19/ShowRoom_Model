@@ -1,9 +1,10 @@
 using UnityEngine;
 
 
-public class ControlUi : MonoBehaviour
+public class ControlUI : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI GameScore;
+    public TMPro.TextMeshProUGUI LifeScore;
     public GameObject spawnPoint;
     public GameObject Obstacle;
 
@@ -14,6 +15,7 @@ public class ControlUi : MonoBehaviour
     public void Update()
     {
         GameScore.text = FlappyManager.Score.ToString();
+        LifeScore.text = ImpulseForce.HP.ToString();
 
         {
 
@@ -55,15 +57,18 @@ public class ControlUi : MonoBehaviour
     {
         FlappyManager.Score = 0;
         GameScore.text = "0";
-        ImpulseForce.HP = 1;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        ImpulseForce.HP = 3;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EpicBird");
     }
 
     public void SpawnObstacle()
 
     {
-        elapsed_time = 0;
-        Instantiate(Obstacle, spawnPoint.transform.position + (Vector3.up * Random.Range(-2, 2)), Quaternion.identity);
+        if(FlappyManager.isGameStarted == true)
+        {
+            elapsed_time = 0;
+            Instantiate(Obstacle, spawnPoint.transform.position + (Vector3.up * Random.Range(-2, 2)), Quaternion.identity);
+        }        
     }
 
 
