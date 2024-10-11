@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Arms
   - Oddy
+  - PointMaker
+  - Obstacle
+  - Spawn
   layers:
   - Default
   - TransparentFX

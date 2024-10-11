@@ -8,8 +8,14 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Obstaculo();
+
+        if (FlappyManager.isGameStarted == true)
+        {
+            Obstaculo();
+        }
     }
+
+
 
     public void Obstaculo()
     {
