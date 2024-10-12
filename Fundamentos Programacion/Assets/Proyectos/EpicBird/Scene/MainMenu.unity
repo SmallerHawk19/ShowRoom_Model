@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CourtainSprite: {fileID: 151214186}
+  GameOverSign: {fileID: 0}
   TargetPosition: {x: 0, y: 11, z: 0}
   MoveTime: 2.5
 --- !u!212 &151214188
@@ -1517,7 +1518,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000029011468, y: 0.70710677, z: -0.7071069, w: 0.00000029497915}
   m_LocalPosition: {x: 0, y: 1, z: 1}
-  m_LocalScale: {x: 2.46, y: 0.82, z: 0.82}
+  m_LocalScale: {x: 2.5, y: 0.8333333, z: 0.8333333}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 237499829}
