@@ -7,6 +7,7 @@ public class ControlUI : MonoBehaviour
     public TMPro.TextMeshProUGUI LifeScore;
     public GameObject spawnPoint;
     public GameObject Obstacle;
+    public Courtain Courtain;
 
     public float interval;
     public float elapsed_time;
@@ -51,6 +52,7 @@ public class ControlUI : MonoBehaviour
     {
         FlappyManager.isGameStarted = false;
         Reset();
+        Courtain.ShowEnds();
     }
 
     public void Reset()
@@ -58,7 +60,6 @@ public class ControlUI : MonoBehaviour
         FlappyManager.Score = 0;
         GameScore.text = "0";
         ImpulseForce.HP = 3;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("EpicBird");
     }
 
     public void SpawnObstacle()
