@@ -11,6 +11,9 @@ TagManager:
   - Spawn
   - EmptyObstacle
   - GameBorder
+  - Objective
+  - PeggleSpawn
+  - Ball
   layers:
   - Default
   - TransparentFX
