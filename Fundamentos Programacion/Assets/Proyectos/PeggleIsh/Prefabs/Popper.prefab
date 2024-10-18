@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6489778516044049686}
-  - component: {fileID: 7439851626764904680}
   - component: {fileID: 6427778096194925525}
   - component: {fileID: 1086865574011424710}
   - component: {fileID: 7803898545984475609}
@@ -35,18 +34,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7439851626764904680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6016502850568058282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba7e5c1e07cc504bb9f2fd132edeaf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &6427778096194925525
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba7e5c1e07cc504bb9f2fd132edeaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _popParticles: {fileID: 4133830356587157849, guid: aace933f740170e4da87ef9d4c46a6e5,
+    type: 3}

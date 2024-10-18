@@ -2,14 +2,11 @@ using UnityEngine;
 
 public class Popper : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject _popParticles;
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void DestroyPopper()
     {
-        if (collision.gameObject.CompareTag("Objective"))
-        {
-            gameObject.SetActive(false);
-        }
+        Instantiate(_popParticles, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
-
 }
