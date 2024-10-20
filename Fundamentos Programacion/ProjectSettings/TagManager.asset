@@ -15,6 +15,7 @@ TagManager:
   - PeggleSpawn
   - Ball
   - Shooter
+  - BlackHole
   layers:
   - Default
   - TransparentFX
