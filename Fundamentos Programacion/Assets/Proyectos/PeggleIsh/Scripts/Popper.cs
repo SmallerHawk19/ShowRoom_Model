@@ -14,6 +14,7 @@ public class Popper : MonoBehaviour
     {
         if(_isActivated) return;
         _isActivated = true;
+        GameManager.Instance.AddPopper(gameObject);
         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         _scoreCanvas.SetActive(true);
         _scoreCanvas.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = _scoreValue.ToString();

@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Proyectos/EpicBird/Scene/MainMenu.unity
-    guid: d7b2dc41bf2afe34d8e5b8077f325330
-  - enabled: 1
-    path: Assets/Proyectos/EpicBird/Scene/EpicBird.unity
-    guid: 0048b34e41dfe5a498637628c8d83878
+    path: Assets/Proyectos/PeggleIsh/Scenes/PeggleIsh.unity
+    guid: d218b3a80c2aee3469500e3a32cf5e83
   m_configObjects: {}

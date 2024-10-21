@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Collitions : MonoBehaviour
@@ -13,7 +14,7 @@ public class Collitions : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Objective"))
         {
-            GameManager.Instance.AddPopper(collision.gameObject);
+           collision.gameObject.GetComponent<Popper>().ActivatePopper();
         } else if (collision.gameObject.CompareTag("BlackHole"))
         {
             GameManager.Instance.EndTurn();
