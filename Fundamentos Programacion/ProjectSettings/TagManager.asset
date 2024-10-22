@@ -16,6 +16,7 @@ TagManager:
   - Ball
   - Shooter
   - BlackHole
+  - Portal
   layers:
   - Default
   - TransparentFX
