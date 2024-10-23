@@ -25,7 +25,7 @@ public class Shooter : MonoBehaviour
             GameObject ballInstance = Instantiate(Ball, firePoint.position, firePoint.rotation );
             Rigidbody2D rb = ballInstance.GetComponent<Rigidbody2D>();
             
-            rb.AddForce(firePoint.up * Force, ForceMode2D.Impulse); //aqui es el pobema peeeero no se como arreglarlo xd         
+            rb.AddForce(firePoint.up * Force, ForceMode2D.Impulse);      
         }
     }
 
