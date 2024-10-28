@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Teleport : MonoBehaviour
@@ -8,6 +9,26 @@ public class Teleport : MonoBehaviour
 
     [HideInInspector] public bool OnCooldown = false;
 
+
+
+    Vector2 m_MyFirstVector;
+    Vector2 m_MySecondVector;
+
+    float m_Angle;
+
+    public GameObject TwinPortal1;
+    public GameObject TwinPortal2;
+
+    public void Start()
+    {
+        m_MyFirstVector = TwinPortal1.transform.position;
+        m_MySecondVector = TwinPortal2.transform.position;
+
+        m_Angle = 0.0f;
+    }
+
+   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ball"))
@@ -15,7 +36,9 @@ public class Teleport : MonoBehaviour
             if(OnCooldown) return;
             ActivateCooldown();
             TeleportBall(collision.gameObject);
+            
             Invoke("DeactivateCooldown", teleportCooldown);
+
         }
     }
 
@@ -25,9 +48,16 @@ public class Teleport : MonoBehaviour
         Vector2 ballSpeed = ballRigidBody.velocity;
         ballRigidBody.velocity = Vector2.zero;
         ball.transform.position = twinLinkedPortal.gameObject.transform.position;
-        ballRigidBody.velocity = new Vector2(ballSpeed.x * portalSpeedVector.x, ballSpeed.y * portalSpeedVector.y);
+        //ballRigidBody.velocity = new Vector2(ballSpeed.x * portalSpeedVector.x, ballSpeed.y * portalSpeedVector.y).normalized;
+
+        m_MyFirstVector = TwinPortal1.transform.position;
+        m_MySecondVector = TwinPortal2.transform.position;
+
+        m_Angle = Vector2.SignedAngle(m_MyFirstVector, m_MySecondVector);
+
     }
 
+  
     private void ActivateCooldown()
     {
         OnCooldown = true;
