@@ -1,28 +1,34 @@
 
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Boosters : MonoBehaviour
 {
     [SerializeField] private GameObject Booster;
     [SerializeField] private float speedBoost = 10.0f;
-    [SerializeField] private int lifeTime = 5;
-    [SerializeField] private int BallQuantity = 1;
+    [SerializeField] private float lifeTime = 5;
+    [SerializeField] private int BallAdded = 1;
+    [SerializeField] private GameObject Ball;
+    bool isCollided = false;
 
-    void Start()
-    {
-        Destroy(gameObject, lifeTime);
-    }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("MultiplyBooster"))
+        //Debug.Log("Collition");
+        if (other.gameObject.CompareTag("Ball") && !isCollided)
         {
-            for (int i = 0; i < BallQuantity; i++)
+            isCollided = true;
+            for (int i = 0; i < BallAdded; i++)
             {
-                //GameObject ballInstance = Instantiate(Ball, transform.position, Quaternion.identity);
-               // Rigidbody2D rb = ballInstance.GetComponent<Rigidbody2D>();
-               // rb.velocity = new Vector2(Random.Range(-speedBoost, speedBoost), Random.Range(-speedBoost, speedBoost));
+                GameObject ballInstance = Instantiate(Ball, transform.position, Quaternion.identity);
+                Rigidbody2D rb = ballInstance.GetComponent<Rigidbody2D>();
+                rb.velocity = new Vector2(Random.Range(-speedBoost, speedBoost), Random.Range(-speedBoost, speedBoost));
+                Destroy(gameObject, lifeTime);
             }
         }
+
+       
     }
+
+    
 }

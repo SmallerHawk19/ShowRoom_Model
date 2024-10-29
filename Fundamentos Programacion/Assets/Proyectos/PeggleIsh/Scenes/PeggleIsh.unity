@@ -3277,8 +3277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Booster: {fileID: 880405335}
   speedBoost: 10
-  lifeTime: 1
-  BallQuantity: 3
+  lifeTime: 0.5
+  BallAdded: 5
+  Ball: {fileID: 7547207984361532135, guid: 62c0b17a6d8bbdd4db1443fea0385681, type: 3}
 --- !u!1 &933475659
 GameObject:
   m_ObjectHideFlags: 0
