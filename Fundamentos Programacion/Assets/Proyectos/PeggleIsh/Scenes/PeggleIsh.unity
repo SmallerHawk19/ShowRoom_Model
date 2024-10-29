@@ -6058,11 +6058,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   twinLinkedPortal: {fileID: 2039781130}
-  portalSpeedVector: {x: 0, y: 0}
+  angleVector: -30
   teleportCooldown: 0.5
   OnCooldown: 0
-  TwinPortal1: {fileID: 1756135858}
-  TwinPortal2: {fileID: 2039781121}
 --- !u!1001 &1782284778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6899,11 +6897,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   twinLinkedPortal: {fileID: 1756135867}
-  portalSpeedVector: {x: 0, y: 0}
+  angleVector: 30
   teleportCooldown: 0.5
   OnCooldown: 0
-  TwinPortal1: {fileID: 2039781121}
-  TwinPortal2: {fileID: 1756135858}
 --- !u!1001 &2074680863
 PrefabInstance:
   m_ObjectHideFlags: 0

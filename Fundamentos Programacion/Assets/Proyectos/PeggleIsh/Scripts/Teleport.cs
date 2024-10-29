@@ -1,33 +1,13 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
     [SerializeField] private Teleport twinLinkedPortal;
-    [SerializeField] private Vector2 portalSpeedVector;
+    [SerializeField] private float angleVector;
     [SerializeField] private float teleportCooldown = 0.5f;
 
     [HideInInspector] public bool OnCooldown = false;
 
-
-
-    Vector2 m_MyFirstVector;
-    Vector2 m_MySecondVector;
-
-    float m_Angle;
-
-    public GameObject TwinPortal1;
-    public GameObject TwinPortal2;
-
-    public void Start()
-    {
-        m_MyFirstVector = TwinPortal1.transform.position;
-        m_MySecondVector = TwinPortal2.transform.position;
-
-        m_Angle = 0.0f;
-    }
-
-   
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,23 +18,21 @@ public class Teleport : MonoBehaviour
             TeleportBall(collision.gameObject);
             
             Invoke("DeactivateCooldown", teleportCooldown);
-
         }
     }
 
     private void TeleportBall(GameObject ball)
     {
-        Rigidbody2D ballRigidBody = ball.GetComponent<Rigidbody2D>();
-        Vector2 ballSpeed = ballRigidBody.velocity;
-        ballRigidBody.velocity = Vector2.zero;
-        ball.transform.position = twinLinkedPortal.gameObject.transform.position;
-        //ballRigidBody.velocity = new Vector2(ballSpeed.x * portalSpeedVector.x, ballSpeed.y * portalSpeedVector.y).normalized;
+        Rigidbody2D ballRigidBody = ball.GetComponent<Rigidbody2D>(); //Obtenemos el rigidbody de la bola
+        Vector2 ballSpeed = ballRigidBody.velocity; //Obtenemos la velocidad de la bola
+        float speedMagnitude = ballSpeed.magnitude; //Obtenemos la magnitud de la velocidad de la bola
+        ballRigidBody.velocity = Vector2.zero; //Establecemos la velocidad de la bola a 0
 
-        m_MyFirstVector = TwinPortal1.transform.position;
-        m_MySecondVector = TwinPortal2.transform.position;
+        ball.transform.position = twinLinkedPortal.transform.position; //Establecemos la posición de la bola en la posición del portal al que se va a teletransportar
 
-        m_Angle = Vector2.SignedAngle(m_MyFirstVector, m_MySecondVector);
+        Vector2 exitDirection = Quaternion.Euler(0, 0, angleVector) * twinLinkedPortal.transform.up; //Calculamos la dirección de salida de la bola
 
+        ballRigidBody.velocity = exitDirection * speedMagnitude; //Establecemos la velocidad de la bola en la dirección de salida y con la magnitud de la velocidad de la bola
     }
 
   
@@ -74,6 +52,8 @@ public class Teleport : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(twinLinkedPortal.gameObject.transform.position, transform.position * portalSpeedVector);
+        Vector3 teleportPosition = twinLinkedPortal.transform.position;
+        Vector3 direction = Quaternion.Euler(0, 0, angleVector) * Vector3.up;
+        Gizmos.DrawLine(teleportPosition, teleportPosition + direction);
     }
 }
