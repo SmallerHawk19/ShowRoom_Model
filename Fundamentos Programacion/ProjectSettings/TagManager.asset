@@ -17,6 +17,7 @@ TagManager:
   - Shooter
   - BlackHole
   - Portal
+  - MultiplyBooster
   layers:
   - Default
   - TransparentFX
