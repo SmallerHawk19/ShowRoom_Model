@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boosters : MonoBehaviour
 {
-    [SerializeField] private GameObject Booster;
+    
     [SerializeField] private float speedBoost = 10.0f;
     [SerializeField] private float lifeTime = 5;
     [SerializeField] private int BallAdded = 1;
