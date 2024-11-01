@@ -13,6 +13,7 @@ public class SpeedBooster : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Collition");
+
         if (other.gameObject.CompareTag("Ball") && !isCollided)
         {
             isCollided = true;
