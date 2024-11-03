@@ -644,7 +644,7 @@ Transform:
   m_GameObject: {fileID: 49502921}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -7.34, y: -3.55, z: 0}
+  m_LocalPosition: {x: -7.57, y: -3.55, z: 0}
   m_LocalScale: {x: 200.00002, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2447,7 +2447,7 @@ Transform:
   m_GameObject: {fileID: 604000332}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 7.12, y: -3.55, z: 0}
+  m_LocalPosition: {x: 7.58, y: -3.55, z: 0}
   m_LocalScale: {x: 200.00002, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7149,15 +7149,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4068509025279260760, guid: 7ded2f75d1b84f1498f85d196fdfd6f7, type: 3}
+    - target: {fileID: 7913297761569504411, guid: 7ded2f75d1b84f1498f85d196fdfd6f7,
+        type: 3}
+      propertyPath: speedBoost
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1534742344193536504, guid: 7ded2f75d1b84f1498f85d196fdfd6f7,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1787098039955571828}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ded2f75d1b84f1498f85d196fdfd6f7, type: 3}
 --- !u!4 &1787098039955571826 stripped
 Transform:
@@ -7165,28 +7165,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1787098039955571825}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1787098039955571827 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1534742344193536504, guid: 7ded2f75d1b84f1498f85d196fdfd6f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1787098039955571825}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1787098039955571828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787098039955571827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b82f8a7ef882634a96ada164de6e1df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ball: {fileID: 7547207984361532135, guid: 62c0b17a6d8bbdd4db1443fea0385681, type: 3}
-  speedBoost: 100
-  lifeTime: 0.5
-  rb: {fileID: 1854005887341537492, guid: 62c0b17a6d8bbdd4db1443fea0385681, type: 3}
 --- !u!1001 &4464551010309459052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7195,6 +7173,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1586980177}
     m_Modifications:
+    - target: {fileID: 827611175372590290, guid: 04c1929995de8164788166ddb681a417,
+        type: 3}
+      propertyPath: BallAdded
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1603844273231053012, guid: 04c1929995de8164788166ddb681a417,
         type: 3}
       propertyPath: m_Name

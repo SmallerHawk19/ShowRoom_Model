@@ -16,12 +16,12 @@ PrefabInstance:
     - target: {fileID: 7147843298324604349, guid: 04c1929995de8164788166ddb681a417,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.37
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 7147843298324604349, guid: 04c1929995de8164788166ddb681a417,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.16
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 7147843298324604349, guid: 04c1929995de8164788166ddb681a417,
         type: 3}
@@ -86,7 +86,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1603844273231053012, guid: 04c1929995de8164788166ddb681a417,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4068509025279260760}
+      addedObject: {fileID: 7913297761569504411}
   m_SourcePrefab: {fileID: 100100000, guid: 04c1929995de8164788166ddb681a417, type: 3}
 --- !u!1 &1534742344193536504 stripped
 GameObject:
@@ -94,7 +94,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 219972529540608300}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4068509025279260760
+--- !u!114 &7913297761569504411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b82f8a7ef882634a96ada164de6e1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ball: {fileID: 7547207984361532135, guid: 62c0b17a6d8bbdd4db1443fea0385681, type: 3}
-  speedBoost: 10
-  lifeTime: 5
-  rb: {fileID: 1854005887341537492, guid: 62c0b17a6d8bbdd4db1443fea0385681, type: 3}
+  speedBoost: 100

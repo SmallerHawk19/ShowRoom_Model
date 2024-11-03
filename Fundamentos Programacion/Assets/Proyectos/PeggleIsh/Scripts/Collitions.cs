@@ -5,6 +5,8 @@ public class Collitions : MonoBehaviour
 {
     public float lifeTime = 60;
 
+    [SerializeField] private bool isClone = false;
+
     private void Start()
     {
         Destroy(gameObject, lifeTime);
@@ -17,7 +19,10 @@ public class Collitions : MonoBehaviour
            collision.gameObject.GetComponent<Popper>().ActivatePopper();
         } else if (collision.gameObject.CompareTag("BlackHole"))
         {
-            GameManager.Instance.EndTurn();
+            if (!isClone)
+            {
+                GameManager.Instance.EndTurn();
+            }
             Destroy(gameObject);
         }
     }

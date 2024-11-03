@@ -134,8 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 491bebca266658a47849899c80ac19a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Booster: {fileID: 1603844273231053012}
   speedBoost: 10
   lifeTime: 0.5
   BallAdded: 5
-  Ball: {fileID: 7547207984361532135, guid: 62c0b17a6d8bbdd4db1443fea0385681, type: 3}
+  Ball: {fileID: 6387281253830275224, guid: 530379d263200574ab64e6da7b5efcda, type: 3}

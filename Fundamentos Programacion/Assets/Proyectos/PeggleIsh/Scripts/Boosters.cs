@@ -25,6 +25,7 @@ public class Boosters : MonoBehaviour
                 rb.velocity = new Vector2(Random.Range(-speedBoost, speedBoost), Random.Range(-speedBoost, speedBoost));
                 Destroy(gameObject, lifeTime);
             }
+            //Destroy(gameObject);
         }
 
        
