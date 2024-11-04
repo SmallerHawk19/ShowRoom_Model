@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Proyectos/PeggleIsh/Scenes/Peggle Main Menu.unity
+    guid: 95c91ae70015874458c28436774fc881
+  - enabled: 1
     path: Assets/Proyectos/PeggleIsh/Scenes/PeggleIsh.unity
     guid: d218b3a80c2aee3469500e3a32cf5e83
   m_configObjects: {}
