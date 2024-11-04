@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5909761393759509228}
   - component: {fileID: 6275979590601113370}
   m_Layer: 0
-  m_Name: Portal 2
+  m_Name: Portal Purple 1
   m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
