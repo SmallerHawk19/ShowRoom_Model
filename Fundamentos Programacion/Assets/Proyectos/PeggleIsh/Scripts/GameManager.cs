@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     private bool _extraBall = false;
 
+    //public static bool isGameStarted;
+
     private void Awake()
     {
         Instance = this;

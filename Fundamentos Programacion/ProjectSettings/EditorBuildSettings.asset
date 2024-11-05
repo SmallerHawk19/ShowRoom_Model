@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Proyectos/PeggleIsh/Scenes/PeggleIsh.unity
     guid: d218b3a80c2aee3469500e3a32cf5e83
+  - enabled: 1
+    path: Assets/Proyectos/PeggleIsh/Scenes/Credits.unity
+    guid: 90873bff5da1c7946b57090806e48522
   m_configObjects: {}
