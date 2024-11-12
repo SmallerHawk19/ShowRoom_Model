@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public float ExtraBallScore = 1000;
     public int BallsLeft = 5;
+    public float TimeLeft = 30;
 
     [HideInInspector] public bool IsBallInPlay = false;
     [HideInInspector] public List<GameObject> ActivatedPoppers = new List<GameObject>();
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
         IsBallInPlay = true;
         _extraBall = false;
         BallsLeft--;
+        TimeOut();
     }
 
     public void EndTurn()
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Turn Score: " + TurnScore);
         TurnScore = 0;
         IsBallInPlay = false;
+        
 
         Debug.Log("Total Score: " + TotalScore);
     }
@@ -84,6 +87,14 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("PeggleIsh");
+        }
+    }
+
+    public void TimeOut()
+    {
+        if (TimeLeft <= 0)
+        {
+            SceneManager.LoadScene("FrenzyMode");
         }
     }
 }
