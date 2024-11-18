@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Proyectos/PeggleIsh/Scenes/Credits.unity
     guid: 90873bff5da1c7946b57090806e48522
+  - enabled: 1
+    path: Assets/Proyectos/PeggleIsh/Scenes/FrenzyMode.unity
+    guid: d8fbbca3edd8bd94e9a7c29dca3bd1a8
   m_configObjects: {}

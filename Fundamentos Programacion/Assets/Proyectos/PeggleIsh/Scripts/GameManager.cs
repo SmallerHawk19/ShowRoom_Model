@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
     public float ExtraBallScore = 1000;
     public int BallsLeft = 5;
     public float TimeLeft = 30;
+    private int _popperCount = 0;
+
 
     [HideInInspector] public bool IsBallInPlay = false;
     [HideInInspector] public List<GameObject> ActivatedPoppers = new List<GameObject>();
 
     [HideInInspector] public int TotalScore = 0;
     [HideInInspector] public int TurnScore = 0;
+
 
     private bool _extraBall = false;
 
@@ -30,6 +33,8 @@ public class GameManager : MonoBehaviour
     {
         AddBalls();
         ReloadGame();
+        TimeLeft -= Time.deltaTime;
+        TimeOut();
     }
 
     public void StartTurn()
@@ -37,7 +42,7 @@ public class GameManager : MonoBehaviour
         IsBallInPlay = true;
         _extraBall = false;
         BallsLeft--;
-        TimeOut();
+        
     }
 
     public void EndTurn()
@@ -92,9 +97,18 @@ public class GameManager : MonoBehaviour
 
     public void TimeOut()
     {
-        if (TimeLeft <= 0)
+        if (TimeLeft >= 0 &_popperCount <=0)
         {
+            
             SceneManager.LoadScene("FrenzyMode");
         }
+    }
+    public void AddPopperCount()
+    {
+        _popperCount++;
+    }
+    public void RemovePopperCount()
+    {
+        _popperCount--;
     }
 }

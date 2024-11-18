@@ -8,15 +8,16 @@ public class PeggleUI : MonoBehaviour
     public TMPro.TextMeshProUGUI BallsLeft;
     public TMPro.TextMeshProUGUI ExtraBall;
     public TMPro.TextMeshProUGUI TimeLeft;
+    
 
-    public float elapsed_time;
 
     public void Update()
     {
         TotalScore.text = GameManager.Instance.TotalScore.ToString();
         TurnScore.text = GameManager.Instance.TurnScore.ToString();
         BallsLeft.text = GameManager.Instance.BallsLeft.ToString();
-        TimeLeft.text = GameManager.Instance.TimeLeft.ToString();
+        TimeLeft.text = GameManager.Instance.TimeLeft.ToString("0.0");
+        
         ExtraBallUI();
     }
 
@@ -31,6 +32,7 @@ public class PeggleUI : MonoBehaviour
             ExtraBall.text = GameManager.Instance.TurnScore + "/" + GameManager.Instance.ExtraBallScore;
         }
     }
+
 
 
 }

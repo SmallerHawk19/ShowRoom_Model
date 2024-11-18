@@ -10,6 +10,16 @@ public class Popper : MonoBehaviour
 
     private bool _isActivated = false;
 
+    private void Start()
+    {
+        GameManager.Instance.AddPopperCount();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.RemovePopperCount();
+    }
+
     public void ActivatePopper()
     {
         if(_isActivated) return;
