@@ -95,12 +95,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TimeOut()
+    private void TimeOut()
     {
-        if (TimeLeft >= 0 &_popperCount <=0)
+        if (TimeLeft >= 0 && _popperCount <= 0)
         {
-            
-            SceneManager.LoadScene("FrenzyMode");
+            GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+            foreach (GameObject obj in allObjects)
+            {
+                obj.SetActive(false);
+            }
+            //SceneManager.LoadScene("FrenzyMode");
         }
     }
     public void AddPopperCount()
