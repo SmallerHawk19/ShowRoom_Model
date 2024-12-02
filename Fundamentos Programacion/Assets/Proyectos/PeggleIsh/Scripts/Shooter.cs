@@ -35,9 +35,12 @@ public class Shooter : MonoBehaviour
             Rigidbody2D rb = ballInstance.GetComponent<Rigidbody2D>();
 
             rb.AddForce(firePoint.up * Force, ForceMode2D.Impulse);
+            GetComponent<AudioSource>();
+            GetComponent<AudioSource>().Play();
         }
     }
 
+   
     private void LookAtMouse()
     {
         mouseDir = Camera.main.ScreenToWorldPoint(Input.mousePosition);
