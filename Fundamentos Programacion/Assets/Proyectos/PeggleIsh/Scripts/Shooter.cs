@@ -17,15 +17,24 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
-        if(GameManager.Instance.IsBallInPlay || GameManager.Instance.BallsLeft == 0) return;
-        
+        if (GameManager.Instance.IsFrenzyMode && GameManager.Instance.BallsLeft > 0)
+        {
+            ShootBall();
+        } else if( GameManager.Instance.BallsLeft > 0 && !GameManager.Instance.IsBallInPlay)
+        {           
+            ShootBall();
+        }
+    }
+
+    private void ShootBall()
+    {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             GameManager.Instance.StartTurn();
-            GameObject ballInstance = Instantiate(Ball, firePoint.position, firePoint.rotation );
+            GameObject ballInstance = Instantiate(Ball, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = ballInstance.GetComponent<Rigidbody2D>();
-            
-            rb.AddForce(firePoint.up * Force, ForceMode2D.Impulse);      
+
+            rb.AddForce(firePoint.up * Force, ForceMode2D.Impulse);
         }
     }
 

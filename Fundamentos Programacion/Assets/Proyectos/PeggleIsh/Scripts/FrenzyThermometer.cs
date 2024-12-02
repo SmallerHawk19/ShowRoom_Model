@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FrenzyThermometer : MonoBehaviour
 {
     [SerializeField] private Slider _thermometer;
-    public float _maxValue = 100;
-    public float _minValue = 0;
+    [SerializeField] private float _maxFrenzyScore = 15000;
 
-    public void Update()
+    private void Update()
     {
-        _thermometer.value = (_minValue / _maxValue);
+        _thermometer.value = GameManager.Instance.TotalScore / _maxFrenzyScore;
     }
 }

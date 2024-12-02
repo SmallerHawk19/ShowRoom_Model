@@ -9,15 +9,32 @@ public class Popper : MonoBehaviour
     public int _scoreValue = 100;
 
     private bool _isActivated = false;
+    [SerializeField] private bool _isFrenzyPopper = false;
 
     private void Start()
     {
-        GameManager.Instance.AddPopperCount();
+        if(_isFrenzyPopper)
+        {
+            FrenzyPopperManager.Instance.AddPopperCount(this.gameObject);
+        } else
+        {
+             GameManager.Instance.AddPopperCount();  
+        }
     }
 
     private void OnDestroy()
     {
-        GameManager.Instance.RemovePopperCount();
+       if(!_isFrenzyPopper) GameManager.Instance.RemovePopperCount();
+    }
+
+    private void OnEnable()
+    {
+        if (_isFrenzyPopper && FrenzyPopperManager.Instance != null) FrenzyPopperManager.Instance.AddPopperCount(this.gameObject);
+    }
+
+    private void OnDisable()
+    {
+        if(_isFrenzyPopper) FrenzyPopperManager.Instance.RemovePopperCount();
     }
 
     public void ActivatePopper()
@@ -35,8 +52,22 @@ public class Popper : MonoBehaviour
     public void DestroyPopper()
     {
         if(!_isActivated) return;
-        Instantiate(_popParticles, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (_isFrenzyPopper)
+        {
+            Instantiate(_popParticles, transform.position, Quaternion.identity);
+            gameObject.SetActive(false);
+        } else
+        {
+            Instantiate(_popParticles, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+
+    public void ResetPopper()
+    {
+        _isActivated = false;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        _scoreCanvas.SetActive(false);
     }
 
     private IEnumerator DeactivateCanvas()

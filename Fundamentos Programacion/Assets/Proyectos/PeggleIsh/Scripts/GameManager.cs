@@ -19,10 +19,13 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int TotalScore = 0;
     [HideInInspector] public int TurnScore = 0;
 
+    [SerializeField] public bool IsFrenzyMode = false;
+    [SerializeField] private LevelDataSO _levelData;
+
 
     private bool _extraBall = false;
 
-    //public static bool isGameStarted;
+    [HideInInspector] public bool isGameStarted = false;
 
     private void Awake()
     {
@@ -33,8 +36,11 @@ public class GameManager : MonoBehaviour
     {
         AddBalls();
         ReloadGame();
-        TimeLeft -= Time.deltaTime;
-        TimeOut();
+        if(isGameStarted)
+        {
+            TimeLeft -= Time.deltaTime;
+            TimeOut();
+        }     
     }
 
     public void StartTurn()
@@ -42,7 +48,7 @@ public class GameManager : MonoBehaviour
         IsBallInPlay = true;
         _extraBall = false;
         BallsLeft--;
-        
+        isGameStarted = true;
     }
 
     public void EndTurn()
@@ -91,22 +97,40 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("PeggleIsh");
+            if (IsFrenzyMode)
+            {
+                SceneManager.LoadScene("FrenzyMode");
+            } else
+            {
+                SceneManager.LoadScene("PeggleIsh");
+            }
         }
     }
 
     private void TimeOut()
     {
-        if (TimeLeft >= 0 && _popperCount <= 0)
+        if(!IsFrenzyMode)
         {
-            GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-            foreach (GameObject obj in allObjects)
+            if (TimeLeft >= 0 && _popperCount <= 0)
             {
-                obj.SetActive(false);
+                SceneManager.LoadScene("FrenzyMode");
             }
-            //SceneManager.LoadScene("FrenzyMode");
+            else if (TimeLeft <= 0)
+            {
+                SceneManager.LoadScene("PeggleIsh");
+            }
+        }
+        else
+        {
+            if(TimeLeft <= 0)
+            {
+                BallsLeft = 0;
+                _levelData.AddLevel();
+                SceneManager.LoadScene("PeggleIsh");
+            }
         }
     }
+
     public void AddPopperCount()
     {
         _popperCount++;
