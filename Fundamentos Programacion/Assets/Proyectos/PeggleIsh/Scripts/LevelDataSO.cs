@@ -1,7 +1,6 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
+using UnityEngine.SceneManagement; // 2 12 
 [CreateAssetMenu(fileName = "LevelData", menuName = "PeggleIsh/LevelData", order = 1)]
 public class LevelDataSO : ScriptableObject
 {

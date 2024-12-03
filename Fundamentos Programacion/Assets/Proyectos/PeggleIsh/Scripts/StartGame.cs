@@ -8,6 +8,7 @@ public class StartGame : MonoBehaviour
     public void Game()
     {
         //GameManager.isGameStarted = true;
+        
         SceneManager.LoadScene("Peggleish");
     }
 

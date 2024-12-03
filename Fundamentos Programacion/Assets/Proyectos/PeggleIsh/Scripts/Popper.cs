@@ -6,10 +6,14 @@ public class Popper : MonoBehaviour
     [SerializeField] private GameObject _scoreCanvas;
     [SerializeField] private GameObject _popParticles;
     [SerializeField] private GameObject _activatedParticles;
+    [SerializeField] private AudioClip impact;
+    [SerializeField] private AudioClip explosion;
     public int _scoreValue = 100;
 
     private bool _isActivated = false;
     [SerializeField] private bool _isFrenzyPopper = false;
+
+   
 
     private void Start()
     {
@@ -45,6 +49,7 @@ public class Popper : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         _scoreCanvas.SetActive(true);
         _scoreCanvas.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = _scoreValue.ToString();
+        AudioSource.PlayClipAtPoint(impact, transform.position);
         //_activatedParticles.SetActive(true);
         StartCoroutine(DeactivateCanvas());
     }
@@ -54,10 +59,12 @@ public class Popper : MonoBehaviour
         if(!_isActivated) return;
         if (_isFrenzyPopper)
         {
+            AudioSource.PlayClipAtPoint(explosion, transform.position);
             Instantiate(_popParticles, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
         } else
         {
+            AudioSource.PlayClipAtPoint(explosion, transform.position);
             Instantiate(_popParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -75,4 +82,9 @@ public class Popper : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         _scoreCanvas.SetActive(false);
     }
+
+    
+
+    
+
 }
