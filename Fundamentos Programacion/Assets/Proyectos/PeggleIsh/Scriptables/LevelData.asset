@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: LevelData
   m_EditorClassIdentifier: 
   levelNumber: 2
+  levelTime:
+  - 40
+  - 35
+  levelBalls: 0400000003000000

@@ -1,10 +1,13 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement; // 2 12 
+using System.Collections.Generic;
+
 [CreateAssetMenu(fileName = "LevelData", menuName = "PeggleIsh/LevelData", order = 1)]
 public class LevelDataSO : ScriptableObject
 {
-   public int levelNumber = 1;
+    public int levelNumber = 1;
+    public List<float> levelTime;
+    public List<int> levelBalls;
 
     public void AddLevel()
     {
