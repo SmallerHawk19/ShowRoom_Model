@@ -31,6 +31,7 @@ public class Shooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             GameManager.Instance.StartTurn();
+            GameManager.Instance.BallsInPlay++;
             GameObject ballInstance = Instantiate(Ball, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = ballInstance.GetComponent<Rigidbody2D>();
 

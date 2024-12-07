@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     
     public LevelDataSO _levelData;
 
+    public int BallsInPlay = 0;
+    public bool LevelComplete = false;
+    public bool LevelFailed = false;
 
     private bool _extraBall = false;
 
@@ -40,7 +43,9 @@ public class GameManager : MonoBehaviour
         if(isGameStarted)
         {
             TimeLeft -= Time.deltaTime;
+            if(TimeLeft <=0) TimeLeft = 0;
             TimeOut();
+            NoBallsInPlay();
         }     
     }
 
@@ -68,6 +73,14 @@ public class GameManager : MonoBehaviour
     {
         TurnScore += popper.GetComponent<Popper>()._scoreValue;
         ActivatedPoppers.Add(popper);
+    }
+
+    private void NoBallsInPlay()
+    {
+        if(BallsInPlay <= 0)
+        {
+            ActivatePoppers();
+        }
     }
 
     private void ActivatePoppers()
@@ -114,11 +127,13 @@ public class GameManager : MonoBehaviour
         {
             if (TimeLeft >= 0 && _popperCount <= 0)
             {
-                SceneManager.LoadScene("FrenzyMode");
+                LevelComplete = true;
+                Invoke("LoadNextLevel", 3);
             }
-            else if (TimeLeft <= 0)
+            else if (TimeLeft <= 0 || BallsLeft <= 0 && _popperCount >= 0 && BallsInPlay <= 0)
             {
-                SceneManager.LoadScene("PeggleIsh");
+                LevelFailed = true;
+                Invoke("ReloadLevel", 3);
             }
         }
         else
@@ -127,9 +142,20 @@ public class GameManager : MonoBehaviour
             {
                 BallsLeft = 0;
                 _levelData.AddLevel();
-                SceneManager.LoadScene("PeggleIsh");
+                LevelComplete = true;
+                Invoke("ReloadLevel", 3);
             }
         }
+    }
+
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene("FrenzyMode");
+    }
+
+    private void ReloadLevel()
+    {
+        SceneManager.LoadScene("PeggleIsh");
     }
 
     public void AddPopperCount()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3330660792757757993}
   - component: {fileID: 878581852294633464}
   - component: {fileID: 4999938994260235875}
+  - component: {fileID: 6507606379768140722}
   m_Layer: 0
   m_Name: Portal Orange 1
   m_TagString: Untagged
@@ -137,3 +138,18 @@ MonoBehaviour:
   angleVector: 377.9
   teleportCooldown: 0.5
   OnCooldown: 0
+--- !u!114 &6507606379768140722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587646907575685105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542d20badea523f4280d346d4cd0a900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0
+  ySpeed: 0
+  zSpeed: 30

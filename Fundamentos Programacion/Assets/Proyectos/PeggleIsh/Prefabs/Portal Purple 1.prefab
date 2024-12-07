@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6180145021782613770}
   - component: {fileID: 5909761393759509228}
   - component: {fileID: 6275979590601113370}
+  - component: {fileID: 505608033357547221}
   m_Layer: 0
   m_Name: Portal Purple 1
   m_TagString: Portal
@@ -117,6 +118,21 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03378129, y: 0.120649576}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5855691
+  m_Radius: 1.2
+--- !u!114 &505608033357547221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8141704260497944012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542d20badea523f4280d346d4cd0a900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0
+  ySpeed: 0
+  zSpeed: 30
