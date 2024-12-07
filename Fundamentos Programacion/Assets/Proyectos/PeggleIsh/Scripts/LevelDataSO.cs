@@ -12,7 +12,7 @@ public class LevelDataSO : ScriptableObject
     public void AddLevel()
     {
         levelNumber++;
-        SaveData();
+       //SaveData();
     }
 
     public void SetLevel(int level)
@@ -27,7 +27,7 @@ public class LevelDataSO : ScriptableObject
         {
             levelNumber = 1;
         }
-        SaveData();
+        //SaveData();
     }
 
     public void ResetLevel()
@@ -35,9 +35,11 @@ public class LevelDataSO : ScriptableObject
         levelNumber = 1;
     }
 
+    /*
     private void SaveData()
     {
         EditorUtility.SetDirty(this);
         AssetDatabase.SaveAssets();
     }
+    */
 }
