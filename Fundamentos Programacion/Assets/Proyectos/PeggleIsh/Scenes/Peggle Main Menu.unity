@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 228515802}
   - component: {fileID: 228515804}
   - component: {fileID: 228515803}
+  - component: {fileID: 228515805}
   m_Layer: 5
   m_Name: Paustronaut
   m_TagString: Untagged
@@ -558,6 +559,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228515801}
   m_CullTransparentMesh: 1
+--- !u!114 &228515805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228515801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f30476ad429515469a5d3d2d6e141df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 20
+  frequency: 1.5
+  offset: 0
 --- !u!1 &256541667
 GameObject:
   m_ObjectHideFlags: 0
