@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public bool LevelComplete = false;
     public bool LevelFailed = false;
 
+    private bool FrenzyComplete = false;
+
     private bool _extraBall = false;
 
     [HideInInspector] public bool isGameStarted = false;
@@ -140,6 +142,8 @@ public class GameManager : MonoBehaviour
         {
             if(TimeLeft <= 0)
             {
+                if (FrenzyComplete) return;
+                FrenzyComplete = true;
                 BallsLeft = 0;
                 _levelData.AddLevel();
                 LevelComplete = true;
