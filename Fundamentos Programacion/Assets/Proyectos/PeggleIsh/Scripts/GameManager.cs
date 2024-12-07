@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int TurnScore = 0;
 
     [SerializeField] public bool IsFrenzyMode = false;
-    [SerializeField] private LevelDataSO _levelData;
+    
+    public LevelDataSO _levelData;
 
 
     private bool _extraBall = false;
