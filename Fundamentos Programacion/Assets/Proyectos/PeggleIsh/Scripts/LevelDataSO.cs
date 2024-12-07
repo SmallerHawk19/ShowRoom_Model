@@ -15,6 +15,11 @@ public class LevelDataSO : ScriptableObject
         SaveData();
     }
 
+    public void SetLevel(int level)
+    {
+        levelNumber = level;
+    }
+
     public void SubtractLevel()
     {
         levelNumber--;
